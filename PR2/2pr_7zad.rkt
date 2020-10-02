@@ -1,0 +1,17 @@
+#lang racket
+(define (worldwar)
+  (display "В каком году началась вторая мировая война?")
+  (newline)
+  (display "Введите число и нажмите <enter>")
+  (newline)
+  (display "->")
+  (define war(read))
+  (if
+   (= war 1939)
+   (display "Верно!")
+   (display "Не правильно. Вторая мировая война началась в 1939г.")
+  )
+  (newline)
+  (worldwar)
+)
+(worldwar)

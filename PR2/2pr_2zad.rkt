@@ -1,0 +1,17 @@
+#lang racket
+(define (clock)
+  (display "Введите время (минут.секунд) => ")
+  (newline)
+  (define time (read))
+  (newline)
+  (if
+   (>(- time (truncate time)) 0.6)
+   (error "Ошибка! Количество секунд не может быть больше 60")
+   (calculate time)
+    )
+  (newline)
+  (clock))
+(define (calculate t)
+  (display (+(*(truncate t) 60) (*(- t (truncate t)) 100)))
+  (display " секунд"))
+(clock)
